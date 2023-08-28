@@ -7,16 +7,8 @@ public class Menu {
     private Date lastUpdated;
     private ArrayList<MenuItem> items;
 
-    public Menu(Date d, ArrayList<MenuItem> i) {
-        this.lastUpdated = d;
-        this.items = i;
-    }
-
-    public void setLastUpdated(Date lastUpdated) {
+    public Menu(Date lastUpdated, ArrayList<MenuItem> items) {
         this.lastUpdated = lastUpdated;
-    }
-
-    public void setItems(ArrayList<MenuItem> items) {
         this.items = items;
     }
 
@@ -27,6 +19,32 @@ public class Menu {
     public ArrayList<MenuItem> getItems() {
         return items;
     }
+
+    public void setLastUpdated(Date lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
+
+    public void setItems(ArrayList<MenuItem> items) {
+        this.items = items;
+    }
+
+    public void addItem(MenuItem newItem) {
+        if (!items.contains(newItem)) {
+            items.add(newItem);
+            setLastUpdated(new Date()); // Update lastUpdated when a new item is added
+        } else {
+            System.out.println("Warning: Item already exists in the menu.");
+        }
+    }
+
+    public void removeItem(MenuItem itemToRemove) {
+        items.remove(itemToRemove);
+        setLastUpdated(new Date()); // Update lastUpdated when an item is removed
+    }
+
+    public void printMenu() {
+        for (MenuItem item : items) {
+            System.out.println(item.getDescription() + " - $" + item.getPrice() + " (" + item.getCategory() + ")");
+        }
+    }
 }
-
-

@@ -6,15 +6,33 @@ public class MenuItem {
     private String category;
     private boolean isNew;
 
-    public MenuItem(double p, String d, String c, boolean iN) {
-        this.price = p;
-        this.description = d;
-        this.category = c;
+    public MenuItem(double price, String description, String category, boolean iN) {
+        this.price = price;
+        this.description = description;
+        this.category = category;
         this.isNew = iN;
+    }
+
+    // Other getter and setter methods...
+
+    public double getPrice() {
+        return price;
     }
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public boolean isNew() {
+        return isNew;
     }
 
     public void setDescription(String description) {
@@ -29,4 +47,3 @@ public class MenuItem {
         isNew = aNew;
     }
 }
-
