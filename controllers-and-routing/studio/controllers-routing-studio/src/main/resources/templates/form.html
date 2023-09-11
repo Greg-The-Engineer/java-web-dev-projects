@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skills Form</title>
+</head>
+<body>
+<h1>Skills Tracker</h1>
+<form method="post" action="/form">
+    Name:<br>
+    <input type="text" name="name"><br>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Programming Language</th>
+        </tr>
+        <tr>
+            <td>1st</td>
+            <td>
+                <select name="firstChoice">
+                    <option value="Java">Java</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>2nd</td>
+            <td>
+                <select name="secondChoice">
+                    <option value="Java">Java</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>3rd</td>
+            <td>
+                <select name="thirdChoice">
+                    <option value="Java">Java</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
