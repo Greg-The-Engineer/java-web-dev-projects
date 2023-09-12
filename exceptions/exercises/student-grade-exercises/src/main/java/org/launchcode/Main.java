@@ -1,5 +1,6 @@
 package org.launchcode;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -25,6 +26,25 @@ public class Main {
                 } catch (ArithmeticException e) {
                         System.out.println("Error: " + e.getMessage());
                 }
+
+                // Test case data
+                HashMap<String, String> studentFiles = new HashMap<>();
+                studentFiles.put("John Smith", "file1.java");
+                studentFiles.put("Jane Doe", "file2.java");
+                studentFiles.put("Bob Johnson", "file3.txt");
+                studentFiles.put("Sarah Williams", "");
+
+                // Iterate over the students and their files
+                for (String student : studentFiles.keySet()) {
+                        String fileName = studentFiles.get(student);
+                        int points;
+                        try {
+                                points = CheckFileExtension(fileName);
+                                System.out.println(student + " scored " + points + " points.");
+                        } catch (IllegalArgumentException e) {
+                                System.out.println(student + " error: " + e.getMessage());
+                        }
+                }
         }
 
         public static double Divide(int x, int y) throws ArithmeticException {
@@ -32,5 +52,17 @@ public class Main {
                         throw new ArithmeticException("Division by zero");
                 }
                 return (double) x / y;
+        }
+
+        public static int CheckFileExtension(String fileName) {
+                if (fileName == null || fileName.isEmpty()) {
+                        throw new IllegalArgumentException("File name is null or empty");
+                }
+
+                if (fileName.endsWith(".java")) {
+                        return 1;
+                } else {
+                        return 0;
+                }
         }
 }
